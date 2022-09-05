@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('prod_steps_delete', {'id': prod_step.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ prod_step.id) }}">
+    <button class="fa fa-cogs" type="button"><a href="{{ path('prod_steps_edit', {'id': prod_step.id}) }}"> Edit</a></button>
+    <button type="submit" class="fa fa-trash"> Delete</button>
+</form>

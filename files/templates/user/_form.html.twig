@@ -1,0 +1,43 @@
+{{ form_start(form) }}
+<div data-parsley-validate class="form-horizontal form-label-left">
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{form.prenom.vars.id}}">prenom</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input value="{{form.prenom.vars.value}}" name="{{form.prenom.vars.full_name}}" id="{{form.prenom.vars.id}}" type="text" class="form-control col-md-7 col-xs-12">
+            {% do form.prenom.setRendered %}
+            {{ form_errors(form.prenom) }}
+            
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{form.nom.vars.id}}">nom</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input value="{{form.nom.vars.value}}" name="{{form.nom.vars.full_name}}" id="{{form.nom.vars.id}}" type="text" class="form-control col-md-7 col-xs-12">
+            {% do form.nom.setRendered %}
+            {{ form_errors(form.nom) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{form.login.vars.id}}">Email</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input value="{{form.login.vars.value}}" name="{{form.login.vars.full_name}}" id="{{form.login.vars.id}}" type="text" class="form-control col-md-7 col-xs-12">
+            {% do form.login.setRendered %}
+            {{ form_errors(form.login) }}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="{{form.password.vars.id}}">password</label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <input value="{{form.password.vars.value}}" name="{{form.password.vars.full_name}}" id="{{form.password.vars.id}}" type="password" class="form-control col-md-7 col-xs-12">
+            {% do form.password.setRendered %}
+            {{ form_errors(form.password) }}
+        </div>
+    </div>
+    <div class="ln_solid"></div>
+    <div class="form-group">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+            <button type="submit" class="btn btn-success">{{ button_label|default('Submit') }}</button>
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}

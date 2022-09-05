@@ -1,0 +1,26 @@
+{{ form_start(form) }}
+<div data-parsley-validate class="form-horizontal form-label-left">
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">prodid <span class="required">*</span></label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input value="{{form.prodid.vars.value}}" name="{{form.prodid.vars.full_name}}" id="{{form.prodid.vars.id}}" type="text" class="form-control col-md-7 col-xs-12">
+      {% do form.prodid.setRendered %}
+      {{ form_errors(form.prodid) }}
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">descp</label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <input value="{{form.descp.vars.value}}" name="{{form.descp.vars.full_name}}" id="{{form.descp.vars.id}}" type="text" class="form-control col-md-7 col-xs-12">
+      {% do form.descp.setRendered %}
+      {{ form_errors(form.descp) }}
+    </div>
+  </div>
+  <div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+      <button type="submit" class="btn btn-success">{{ button_label|default('Submit') }}</button>
+    </div>
+  </div>
+</div>
+{{ form_end(form) }}
