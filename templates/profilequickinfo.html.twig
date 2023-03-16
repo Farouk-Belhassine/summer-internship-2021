@@ -1,0 +1,11 @@
+<div class="profile clearfix">
+    <div class="profile_pic">
+        <img src="{{asset('production/images/user.png')}}" alt="..." class="img-circle profile_img">
+    </div>
+    {% if app.user %}
+    <div class="profile_info">
+        <span>Welcome,</span>
+        <h2>{{ app.user.prenom }} {{ app.user.nom }}</h2>
+    </div>
+    {% endif %}
+</div>
